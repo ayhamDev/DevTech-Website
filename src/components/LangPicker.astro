@@ -1,0 +1,7 @@
+---
+import { getLangFromUrl } from "@i18n/utils";
+const lang = getLangFromUrl(Astro.url)
+const NewLang = lang == "en" ? "ar" : "en"
+---
+
+<li><a class="text navbar__links text-white bg-primary bg-opacity-25" href={`/${NewLang}`}>{NewLang == "ar" ? "العربية" : "English"}</a></li>

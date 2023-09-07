@@ -3,3 +3,4 @@
 
 export const SITE_TITLE = "DevTech";
 export const SITE_DESCRIPTION = "DevTech Company official Website";
+export const SITE_DESCRIPTION_AR = "DevTech Company official Website العربية";

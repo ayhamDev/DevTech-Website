@@ -4,12 +4,35 @@
     "strictNullChecks": true,
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["src/components/*"],
-      "@styles/*": ["src/styles/*"],
-      "@layouts/*": ["src/layouts/*"],
-      "@public/*": ["public/*"],
-      "@i18n/*": ["src/i18n/*"],
-      "@const": ["src/consts.ts"],
-    }
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@sections/*": [
+        "src/sections/*"
+      ],
+      "@styles/*": [
+        "src/styles/*"
+      ],
+      "@layouts/*": [
+        "src/layouts/*"
+      ],
+      "@public/*": [
+        "public/*"
+      ],
+      "@i18n/*": [
+        "src/i18n/*"
+      ],
+      "@script/*": [
+        "src/scripts/*"
+      ],
+      "@content/*": [
+        "src/content/*"
+      ],
+      "@const": [
+        "src/consts.ts"
+      ]
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   }
 }

@@ -11,19 +11,31 @@
   font-style: normal !important;
   font-display: swap;
 }
+
 :root {
-  --font: "Quicksand";
+  --font: "Quicksand", sans-serif;
   --primary: 110, 159, 255;
   --secondary: 34, 34, 34;
   --white: 255, 255, 255;
   --tw-bg-opacity: 1;
   --tw-text-opacity: 1;
 }
+.hidden {
+  display: none !important;
+  opacity: 0 !important;
+}
+canvas {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
 * {
-  font-family: var(--font), sans-serif !important;
+  font-family: var(--font) !important;
   box-sizing: border-box;
-
-  /* transition: 0.3s all; */
+  scroll-behavior: smooth;
+  user-zoom: none;
+  -webkit-user-drag: none;
+  overflow-wrap: break-word;
 }
 *:focus {
   outline-offset: 2px;
@@ -32,11 +44,20 @@
   outline-style: solid;
 }
 
-.navbar_Link-selected {
+.navbar__Link-selected {
   @apply bg-primary bg-opacity-40;
 }
-.navbar__links {
+.navbar__links,
+.mobile__links {
   @apply px-4 py-2 rounded-main;
+}
+
+.mobile__menu-show {
+  @apply !scale-100 top-[40px] !opacity-100;
+}
+.mobile__menu {
+  transform-origin: top right;
+  transition: 0.4s all cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 body,
 html {
@@ -45,7 +66,7 @@ html {
   overflow: hidden;
 }
 h1 {
-  font-family: "Quicksand";
+  font-family: var(--font);
   font-size: 3rem !important;
   font-style: normal !important;
   font-weight: 700 !important;
@@ -53,7 +74,7 @@ h1 {
   text-transform: uppercase !important;
 }
 h2 {
-  font-family: "Quicksand";
+  font-family: var(--font);
   font-size: 2.5rem !important;
   font-style: normal !important;
   font-weight: 500 !important;
@@ -62,7 +83,7 @@ h2 {
 }
 
 h3 {
-  font-family: "Quicksand";
+  font-family: var(--font);
   font-size: 2rem !important;
   font-style: normal !important;
   font-weight: 400 !important;
@@ -70,7 +91,7 @@ h3 {
   text-transform: capitalize !important;
 }
 h4 {
-  font-family: "Quicksand";
+  font-family: var(--font);
   font-size: 1.5625rem !important;
   font-style: normal !important;
   font-weight: 400 !important;
@@ -78,7 +99,7 @@ h4 {
   text-transform: capitalize !important;
 }
 p {
-  font-family: "Quicksand";
+  font-family: var(--font);
   font-size: 1.25rem !important;
   font-style: normal !important;
   font-weight: 400 !important;
@@ -86,7 +107,7 @@ p {
   text-transform: capitalize !important;
 }
 .text {
-  font-family: "Quicksand";
+  font-family: var(--font);
   font-size: 1rem !important;
   font-style: normal !important;
   font-weight: 400 !important;
@@ -94,8 +115,8 @@ p {
   text-transform: capitalize !important;
 }
 
-p.body1 {
-  font-family: "Quicksand";
+.body1 {
+  font-family: var(--font);
   font-size: 1rem !important;
   font-style: normal !important;
   font-weight: 400 !important;
@@ -103,21 +124,147 @@ p.body1 {
   text-transform: capitalize !important;
 }
 
-p.body2 {
-  font-family: "Quicksand";
+.body2 {
+  font-family: var(--font);
   font-size: 0.8125rem !important;
   font-style: normal !important;
   font-weight: 400 !important;
   line-height: 120% !important; /* 0.975rem */
 }
-p.tiny {
-  font-family: "Quicksand";
+.tiny {
+  font-family: var(--font);
   font-size: 0.625rem !important;
   font-style: normal !important;
   font-weight: 300 !important;
   line-height: 120% !important; /* 0.75rem */
 }
+.section__end {
+  clip-path: polygon(
+    50% 0%,
+    100% 0,
+    100% 35%,
+    100% 84%,
+    74% 70%,
+    60% 83%,
+    39% 71%,
+    19% 83%,
+    0 73%,
+    0 0
+  );
+}
+astro-island {
+  display: flex !important;
+}
 
+a {
+  cursor: pointer;
+  user-select: none;
+  -moz-user-select: none;
+  text-transform: capitalize;
+  -webkit-user-select: none;
+}
+.animate-scroll {
+  animation-name: Scroll;
+  animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-duration: 1000ms;
+}
+.lds-roller {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-roller div {
+  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  transform-origin: 40px 40px;
+}
+.lds-roller div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgb(var(--primary));
+  margin: -4px 0 0 -4px;
+}
+.lds-roller div:nth-child(1) {
+  animation-delay: -0.036s;
+}
+.lds-roller div:nth-child(1):after {
+  top: 63px;
+  left: 63px;
+}
+.lds-roller div:nth-child(2) {
+  animation-delay: -0.072s;
+}
+.lds-roller div:nth-child(2):after {
+  top: 68px;
+  left: 56px;
+}
+.lds-roller div:nth-child(3) {
+  animation-delay: -0.108s;
+}
+.lds-roller div:nth-child(3):after {
+  top: 71px;
+  left: 48px;
+}
+.lds-roller div:nth-child(4) {
+  animation-delay: -0.144s;
+}
+.lds-roller div:nth-child(4):after {
+  top: 72px;
+  left: 40px;
+}
+.lds-roller div:nth-child(5) {
+  animation-delay: -0.18s;
+}
+.lds-roller div:nth-child(5):after {
+  top: 71px;
+  left: 32px;
+}
+.lds-roller div:nth-child(6) {
+  animation-delay: -0.216s;
+}
+.lds-roller div:nth-child(6):after {
+  top: 68px;
+  left: 24px;
+}
+.lds-roller div:nth-child(7) {
+  animation-delay: -0.252s;
+}
+.lds-roller div:nth-child(7):after {
+  top: 63px;
+  left: 17px;
+}
+.lds-roller div:nth-child(8) {
+  animation-delay: -0.288s;
+}
+.lds-roller div:nth-child(8):after {
+  top: 56px;
+  left: 12px;
+}
+@keyframes lds-roller {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes Scroll {
+  from {
+    opacity: 1;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
 @media only screen and (max-width: 600px) {
   * {
     cursor: default !important;

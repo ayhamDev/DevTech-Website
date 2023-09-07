@@ -1,3 +1,12 @@
-<section class="w-[100%] max-w-[1200px] mx-auto px-6">
-    <slot />
+---
+interface Props {
+  noPadding?: boolean;
+}
+const { noPadding = false } = Astro.props;
+---
+
+<section
+  class={`w-[100%] max-w-[1200px] mx-auto ${noPadding ? "px-0" : "px-6"}`}
+>
+  <slot />
 </section>

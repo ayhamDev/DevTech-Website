@@ -1,7 +1,16 @@
 ---
-import { getLangFromUrl } from "@i18n/utils";
-const lang = getLangFromUrl(Astro.url)
-const NewLang = lang == "en" ? "ar" : "en"
----
+    interface Props {
+    className?: string;
+    }
+    const { className } = Astro.props;
 
-<li><a class="text navbar__links text-white bg-primary bg-opacity-25" href={`/${NewLang}`}>{NewLang == "ar" ? "العربية" : "English"}</a></li>
+    import { getLangFromUrl } from "@i18n/utils";
+    const lang = getLangFromUrl(Astro.url)
+    const NewLang = lang == "ar" ? "English" : "العربية"
+    const ReverseLang = lang == "ar" ? "en" : "ar" 
+---
+<li>
+
+    <a class={`text navbar__links ${className} text-white bg-primary bg-opacity-10`} href={`/${ReverseLang}`} >{NewLang}</a>
+</li>
+

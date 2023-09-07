@@ -1,9 +1,19 @@
 ---
-    import Navbar from "@components/Navbar.astro";
+import Navbar from "@components/Navbar.astro";
+import Footer from "@components/Footer.astro";
 import Parallax from "@components/Parallax.astro"
----
 
+import OurServices from "@sections/OurServices.astro"
+import Hero from "@sections/Hero.astro"
+---
 
 <Parallax>
     <Navbar />
+    <Hero  />
+    <OurServices  />
+    <div class="section__end w-full h-[200px] bg-white shadow-2xl close"></div>
+    <Footer  />
+
+  
+
 </Parallax>

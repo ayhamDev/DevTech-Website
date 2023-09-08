@@ -103,15 +103,18 @@ const t = useTranslations(lang);
           <a
             role="link"
             data-section="OurServices"
-            class="text link navbar__links hover:bg-primary transition-all duration-300 hover:bg-opacity-25 text-white">{t("nav.services")}</a
+            class="text link navbar__links hover:bg-primary transition-all duration-300 hover:bg-opacity-25 text-white"
+            >{t("nav.services")}</a
           >
         </li>
         <li>
-          <a role="link" class="text link navbar__links hover:bg-primary transition-all duration-300 hover:bg-opacity-25 text-white" href=""
-            >{t("nav.aboutus")}</a
+          <a
+            role="link"
+            class="text link navbar__links hover:bg-primary transition-all duration-300 hover:bg-opacity-25 text-white"
+            data-section="Aboutus">{t("nav.aboutus")}</a
           >
         </li>
-        <Button>{t("button.contactus")}</Button>
+        <Button className="contactus_btns">{t("button.contactus")}</Button>
         <LangPicker />
       </ul>
       <!-- Mobile Menu -->
@@ -149,11 +152,13 @@ const t = useTranslations(lang);
             >
           </li>
           <li>
-            <a role="link" class="text link mobile__links text-black"
-              >{t("nav.aboutus")}</a
+            <a
+              role="link"
+              class="text link mobile__links text-black"
+              data-section="Aboutus">{t("nav.aboutus")}</a
             >
           </li>
-          <Button>{t("button.contactus")}</Button>
+          <Button className="contactus_btns">{t("button.contactus")}</Button>
           <LangPicker className="!text-black" />
         </ul>
       </div>

@@ -20,9 +20,36 @@
   --tw-bg-opacity: 1;
   --tw-text-opacity: 1;
 }
-.hidden {
-  display: none !important;
-  opacity: 0 !important;
+img {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+.clip_goals {
+  -webkit-clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 57%,
+    76% 59%,
+    92% 85%,
+    76% 82%,
+    57% 96%,
+    40% 85%,
+    32% 100%,
+    0 100%
+  );
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 57%,
+    76% 59%,
+    92% 85%,
+    76% 82%,
+    57% 96%,
+    40% 85%,
+    32% 100%,
+    0 100%
+  );
 }
 canvas {
   position: absolute;
@@ -138,18 +165,22 @@ p {
   font-weight: 300 !important;
   line-height: 120% !important; /* 0.75rem */
 }
+textarea {
+  resize: none;
+}
 .section__end {
+  margin-top: -1px;
   clip-path: polygon(
-    50% 0%,
+    0 0,
     100% 0,
-    100% 35%,
-    100% 84%,
-    74% 70%,
-    60% 83%,
-    39% 71%,
-    19% 83%,
-    0 73%,
-    0 0
+    100% 61%,
+    81% 94%,
+    71% 70%,
+    46% 90%,
+    55% 63%,
+    18% 89%,
+    11% 67%,
+    0 95%
   );
 }
 astro-island {
@@ -269,4 +300,11 @@ a {
   * {
     cursor: default !important;
   }
+}
+
+.faq-init {
+  grid-template-rows: 0fr;
+}
+.faq-expand {
+  grid-template-rows: 1fr;
 }

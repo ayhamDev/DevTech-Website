@@ -5,28 +5,39 @@ import ServiceCard from "@components/ServiceCard";
 import SwiperContainer from "@components/SwiperContainer.astro";
 import ServiceContent from "@components/ServiceContent.astro";
 import Useless from "@components/Useless.astro";
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
 
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<section id="OurServices" class="bg-white w-[100%] pt-8 mb-[-1px]  close">
-  <h2 class="text-center mb-6">Our services</h2>
+<section id="OurServices" class="bg-white w-[100%] pt-8 close">
+  <h2 class="text-center mb-6">{t("nav.services")}</h2>
   <Wrapper noPadding>
     <!-- React Section -->
-      <SwiperContainer>
-        
-        {Services.map((service) =>
-        <div data-service_type={`${service.type}`} data-index={service.id} class="swiper-slide !flex !justify-center !items-center">
-          <ServiceCard client:idle {...service} class:list={["!flex"]} />
-          </div>)}
-      </SwiperContainer>
-      <ServiceContent />
-      
-      <div class="loading w-full m-auto flex justify-center items-center">
-        <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    <SwiperContainer>
+      {
+        Services.map((service) => (
+          <div
+            data-service_type={`${service.type}`}
+            data-index={service.id}
+            class="swiper-slide !flex !justify-center !items-center"
+          >
+            <ServiceCard client:visible {...service} class:list={["!flex"]} />
+          </div>
+        ))
+      }
+    </SwiperContainer>
+    <ServiceContent />
+
+    <div class="loading w-full m-auto flex justify-center items-center">
+      <div class="lds-roller">
+        <div></div><div></div><div></div><div></div><div></div><div></div><div>
+        </div><div></div>
       </div>
+    </div>
   </Wrapper>
   <Wrapper>
-    <Useless />  
-
+    <Useless />
   </Wrapper>
 </section>

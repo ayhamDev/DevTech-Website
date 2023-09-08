@@ -1,6 +1,28 @@
 ---
-    
+import BackgroundImage from "@public/images/background.png";
+import { Image } from "astro:assets";
 ---
-<main style="overflow-x: hidden;" class="bg-[url(/images/background.png)] bg-center bg-fixed bg-no-repeat bg-cover h-[100vh] w-[100vw overflow-y-auto relative">
-    <slot />
+
+<main
+  style="overflow-x: hidden;"
+  class="bg-center bg-fixed bg-no-repeat bg-cover h-[100vh] w-[100vw overflow-y-auto relative"
+>
+  <!-- parallax Image -->
+  <Image
+    style={{
+      position: "fixed",
+      inset: "0",
+      top: "50%",
+      left: "50%",
+      transform: "translate(-50%, -50%);",
+      zIndex: "-1",
+      objectFit: "cover",
+      minHeight: "105%",
+      minWidth: "105%",
+    }}
+    src={BackgroundImage}
+    alt={"background Parallax Image"}
+  />
+  <!-- Website Content -->
+  <slot />
 </main>

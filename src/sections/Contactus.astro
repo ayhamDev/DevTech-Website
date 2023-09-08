@@ -1,0 +1,21 @@
+---
+import Wrapper from "@layouts/Wrapper.astro";
+import ContactusForm from "@components/ContactusForm.astro";
+import FAQ from "@components/FAQ";
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section id="Contactus" class="bg-white pb-40 close">
+  <Wrapper>
+    <h2 class="mb-5 text-center">{t("contactus.title")}</h2>
+    <div class="flex justify-center items-start gap-12 md:flex-row flex-col">
+      <ContactusForm />
+      <div class="flex-1 w-full">
+        <FAQ client:visible />
+      </div>
+    </div>
+  </Wrapper>
+</section>
+<section class="section__end bg-white py-12"></section>

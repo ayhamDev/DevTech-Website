@@ -1,0 +1,53 @@
+---
+import { getLangFromUrl } from "@i18n/utils";
+import Button from "./Button.astro";
+import Input from "./Input.astro";
+import TextArea from "./TextArea.astro";
+
+const lang = getLangFromUrl(Astro.url);
+---
+
+<form
+  action="sendmail.php"
+  method="POST"
+  class={`contactus_form flex-1 w-full px-5 py-6 flex flex-col gap-4 bg-white shadow-main rounded-main`}
+>
+  <Input
+    placeholder={lang == "en" ? "*Full Name" : "*ألاسم"}
+    name="name"
+    type="text"
+    required
+  />
+  <Input
+    placeholder={lang == "en"
+      ? "Company Name (Optional)"
+      : "أسم الشركة (اختياري)"}
+    name="company"
+    type="text"
+  />
+  <Input
+    placeholder={lang == "en" ? "Email" : "*البريد الالكتروني"}
+    type="email"
+    name="email"
+    required
+  />
+  <Input
+    placeholder={lang == "en" ? "*Phone Number" : "*رقم الهاتف"}
+    type="tel"
+    name="phone"
+    required
+  />
+  <Input
+    placeholder={lang == "en" ? "*Subject..." : "*عنوان الموضوع"}
+    type="text"
+    name="subject"
+    required
+  />
+  <TextArea
+    placeholder={lang == "en" ? "Message..." : "...الرسالة"}
+    name="aria-required={true}"
+  />
+  <Button type="submit" className={"!w-full"}>
+    {lang == "en" ? "Send" : "ارسال"}
+  </Button>
+</form>

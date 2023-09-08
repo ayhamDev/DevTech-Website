@@ -1,0 +1,48 @@
+---
+import Goals from "@content/Goals";
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
+import Wrapper from "@layouts/Wrapper.astro";
+import { Image } from "astro:assets";
+import AboutusImage from "@public/images/aboutus.png";
+import Useless from "@components/Useless.astro";
+
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+---
+<section  id="Aboutus" class="w-[100%] close py-8 bg-white flex flex-col md:gap-0 gap-10">
+  <div >
+      <Wrapper>
+      <h2 class="text-center mb-5">{t("aboutus.title")}</h2> 
+      <p>{t("aboutus.text")}</p>     
+    </Wrapper>
+  </div>
+    <div >
+      <Wrapper>
+        <div class="flex justify-center items-center flex-col md:flex-row">
+          <div >
+            <h2 class="mb-5">Our Goals</h2>
+            <div class="flex flex-col gap-4">
+              {
+                Goals.map(goal => (
+                  <div class="flex justify-center items-start gap-4"> 
+                      <div class="bg-black min-w-[30px] min-h-[30px] text-white text-center flex justify-center items-center rounded-full">{goal.index}</div>
+                      <div class="flex flex-col gap-2">
+                        <h4 class="text-primary align-text-top !font-bold">{lang == "en" ? goal.title : goal.title_ar}</h4>
+                        <p class="opacity-80 body1 min-w-[250px] max-w-[600px]">{lang == "en" ? goal.text : goal.text_ar}</p>
+                      </div>
+                    </div>
+                ))
+              }
+            </div>
+          </div>
+         <div>
+          <Image src={AboutusImage} alt={"About Us"} />
+         </div>
+        </div>
+
+        <Useless />
+    </Wrapper>
+    </div>
+
+</section>

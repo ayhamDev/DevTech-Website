@@ -1,1 +1,21 @@
-<meta http-equiv="refresh" content="0; url=/ar">
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+  <div
+    class="loading w-[100vw] h-[100vh] m-auto flex justify-center items-center"
+  >
+    <div class="lds-roller">
+      <div></div><div></div><div></div><div></div><div></div><div></div><div>
+      </div><div></div>
+    </div>
+  </div>
+  <script>
+    if (navigator.language.includes("ar")) {
+      location.replace("/ar");
+    } else {
+      location.replace("/en");
+    }
+  </script>
+</BaseLayout>

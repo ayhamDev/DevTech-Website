@@ -1,11 +1,4 @@
-import isMobile from "is-mobile";
-
 const SCROLL_TOP_OFFSET = 100;
-const CanAnimateSection =
-  !isMobile() &&
-  "hardwareConcurrency" in navigator &&
-  navigator.hardwareConcurrency >= 8;
-
 const main = document.querySelector("main") as HTMLElement;
 const navbar = document.querySelector(".navbar") as HTMLDivElement;
 const navbarLinks = document.querySelectorAll(
@@ -130,13 +123,6 @@ document.querySelectorAll(".close").forEach((sec) =>
 );
 const handleNavbar = () => {
   if (!main || !navbar) return null;
-  if (CanAnimateSection) {
-    if (main.scrollTop > 25 && main.scrollTop <= 500) {
-      const amount = main.scrollTop - 25;
-      OurServices.style.borderRadius = `${amount}px ${amount}px 0px 0px`;
-    }
-  }
-
   if (main?.scrollTop >= SCROLL_TOP_OFFSET) {
     navbar.classList.add("bg-white");
     navbarLinks.forEach((link) => link.classList.remove("text-white"));

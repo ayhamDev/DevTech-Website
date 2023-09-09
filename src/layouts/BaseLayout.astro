@@ -1,16 +1,19 @@
 ---
-import BaseHead from "@components/BaseHead.astro"
-import { SITE_TITLE, SITE_DESCRIPTION } from "@const"
-import { getLangFromUrl } from '@i18n/utils';
+import BaseHead from "@components/BaseHead.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "@const";
+import { getLangFromUrl } from "@i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang={lang}>
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-    <slot />
-</body>
+  <head>
+    <BaseHead
+      title={SITE_TITLE}
+      description={SITE_DESCRIPTION}
+      image="/images/LogoBig.png"
+    />
+  </head>
+  <slot />
 </html>

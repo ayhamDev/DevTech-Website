@@ -62,10 +62,10 @@ const swiper = new Swiper(".swiper", {
   },
 });
 
-window.addEventListener("hashchange", handleHashChange);
-window.addEventListener("resize", handleHashChange);
-handleHashChange();
-function handleHashChange() {
+window.addEventListener("hashchange", () => handleHashChange(true));
+window.addEventListener("resize", () => handleHashChange(false));
+handleHashChange(true);
+function handleHashChange(routing) {
   LoadingBox.classList.add("hidden");
   ServicesSwiper.classList.remove("hidden");
 
@@ -97,14 +97,16 @@ function handleHashChange() {
     )
     ?.classList.remove("hidden");
   ServiceContentContainer.classList.remove("hidden");
-  var headerOffset = 100;
-  // @ts-ignore
-  var elementPosition = OurServices.getBoundingClientRect().top;
+  if (routing) {
+    var headerOffset = 100;
+    // @ts-ignore
+    var elementPosition = OurServices.getBoundingClientRect().top;
 
-  var offsetPosition = elementPosition + main.scrollTop - headerOffset;
-  if (ServiceType)
-    return main.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth",
-    });
+    var offsetPosition = elementPosition + main.scrollTop - headerOffset;
+    if (ServiceType)
+      return main.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+  }
 }

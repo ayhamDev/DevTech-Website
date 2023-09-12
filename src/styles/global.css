@@ -4,21 +4,24 @@
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
 
-@font-face {
-  font-family: "Quicksand";
-  src: url("/fonts/Quicksand-VariableFont_wght.ttf");
-  font-weight: normal !important;
-  font-style: normal !important;
-  font-display: swap;
-}
-
 :root {
   --font: "Quicksand", sans-serif;
+  --font-arabic: "Arabic-thin", sans-serif;
+  --font-arabic-bold: "Arabic-bold", sans-serif;
   --primary: 110, 159, 255;
   --secondary: 34, 34, 34;
   --white: 255, 255, 255;
   --tw-bg-opacity: 1;
   --tw-text-opacity: 1;
+}
+html:lang(ar) {
+  font-family: var(--font-arabic) !important;
+  text-align: right;
+}
+
+html:lang(en) {
+  font-family: var(--font) !important;
+  text-align: left;
 }
 img {
   user-select: none;
@@ -57,7 +60,6 @@ canvas {
   height: 0;
 }
 * {
-  font-family: var(--font) !important;
   box-sizing: border-box;
   scroll-behavior: smooth;
   user-zoom: none;
@@ -93,15 +95,17 @@ html {
   overflow: hidden;
 }
 h1 {
-  font-family: var(--font);
   font-size: 3rem !important;
   font-style: normal !important;
   font-weight: 700 !important;
   line-height: 120% !important; /* 3.75rem */
   text-transform: uppercase !important;
 }
+h1:lang(ar),
+h2:lang(ar) {
+  font-family: var(--font-arabic-bold);
+}
 h2 {
-  font-family: var(--font);
   font-size: 2.5rem !important;
   font-style: normal !important;
   font-weight: 500 !important;
@@ -110,7 +114,6 @@ h2 {
 }
 
 h3 {
-  font-family: var(--font);
   font-size: 2rem !important;
   font-style: normal !important;
   font-weight: 400 !important;
@@ -118,7 +121,6 @@ h3 {
   text-transform: capitalize !important;
 }
 h4 {
-  font-family: var(--font);
   font-size: 1.5625rem !important;
   font-style: normal !important;
   font-weight: 400 !important;
@@ -126,7 +128,6 @@ h4 {
   text-transform: capitalize !important;
 }
 p {
-  font-family: var(--font);
   font-size: 1.25rem !important;
   font-style: normal !important;
   font-weight: 400 !important;
@@ -134,7 +135,6 @@ p {
   text-transform: capitalize !important;
 }
 .text {
-  font-family: var(--font);
   font-size: 1rem !important;
   font-style: normal !important;
   font-weight: 400 !important;
@@ -143,7 +143,6 @@ p {
 }
 
 .body1 {
-  font-family: var(--font);
   font-size: 1rem !important;
   font-style: normal !important;
   font-weight: 400 !important;
@@ -152,14 +151,12 @@ p {
 }
 
 .body2 {
-  font-family: var(--font);
   font-size: 0.8125rem !important;
   font-style: normal !important;
   font-weight: 400 !important;
   line-height: 120% !important; /* 0.975rem */
 }
 .tiny {
-  font-family: var(--font);
   font-size: 0.625rem !important;
   font-style: normal !important;
   font-weight: 300 !important;

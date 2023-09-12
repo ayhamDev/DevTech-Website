@@ -1,6 +1,7 @@
 ---
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
+import { getLangFromUrl } from "@i18n/utils";
 import "@styles/global.css";
 
 interface Props {
@@ -11,6 +12,8 @@ interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const { title, description, image = "/images/LogoBig.png" } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
 ---
 
 <!-- Global Metadata -->
@@ -21,14 +24,64 @@ const { title, description, image = "/images/LogoBig.png" } = Astro.props;
 />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <meta name="generator" content={Astro.generator} />
+
 <!-- Font preloads -->
-<link
-  rel="preload"
-  href="/fonts/Quicksand-VariableFont_wght.ttf"
-  as="font"
-  type="font/ttf"
-  crossorigin
-/>
+{
+  lang == "en" ? (
+    <link
+      rel="preload"
+      href="/fonts/Quicksand-VariableFont_wght.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <style>
+      @font-face {
+      font-family: "Quicksand";
+      src: url("/fonts/Quicksand-VariableFont_wght.ttf");
+      font-weight: normal !important;
+      font-style: normal !important;
+      font-display: swap;
+    }
+
+
+      </style>
+  ) : (
+    <>
+      <link
+        rel="preload"
+        href="/fonts/arabicmodern-bold.otf"
+        as="font"
+        type="font/otf"
+        crossorigin
+      />
+      <link
+        rel="preload"
+        href="/fonts/arabicmodern-book.otf"
+        as="font"
+        type="font/otf"
+        crossorigin
+      />
+      <style>
+        @font-face {
+        font-family: "Arabic-bold";
+        src: url("/fonts/arabicmodern-bold.otf");
+        font-weight: normal !important;
+        font-style: normal !important;
+        font-display: swap;
+        }
+        @font-face {
+          font-family: "Arabic-thin";
+          src: url("/fonts/arabicmodern-book.otf");
+          font-weight: normal !important;
+          font-style: normal !important;
+          font-display: swap;
+        }
+        </style>
+    </>
+  )
+}
+
 <link rel="sitemap" href="/sitemap-index.xml" />
 
 <!-- Canonical URL -->

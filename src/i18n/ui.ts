@@ -20,8 +20,9 @@ export const ui = {
     "service.development": "development",
     "contactus.title": "Contact Us",
     "aboutus.title": "About Us",
-    "aboutus.text": `Lorem ipsum dolor sit amet consectetur. Eget in diam non nunc consequat adipiscing. Gravida eleifend dictum rutrum dapibus ultrices vitae in pellentesque leo. Dolor mi mattis semper est congue ornare risus elit quis. Pretium vel molestie purus lorem tellus malesuada amet. Faucibus gravida sagittis proin imperdiet ultricies enim amet fames at. Nisi justo aliquet sed varius nisl consequat pharetra vulputate. Accumsan cras vel faucibus tincidunt gravida risus dignissim faucibus velit. Volutpat ac eget hendrerit vitae. Venenatis eu ut ac faucibus id non elementum. Egestas massa orci scelerisque scelerisque tellus augue.
-    Faucibus tortor eleifend montes venenatis quisque facilisis. Dictum gravida sed id laoreet id pulvinar nibh. Nunc commodo porttitor ut morbi ac at velit velit.`,
+    "aboutus.text": `DevTech is a forward-thinking digital solutions company dedicated to propelling businesses into the future. Our team of experts combines cutting-edge technology with strategic vision to deliver exceptional results. With a focus on quality, security, and innovation, we redefine what's possible in the digital realm.`,
+    "aboutus.goals.title": "Our Mission",
+    "aboutus.goals.text": `DevTech is on a mission to revolutionize the digital landscape by providing cutting-edge solutions that drive business success. We are dedicated to delivering exceptional value to our clients through a blend of expertise, creativity, and unwavering commitment to quality. With a focus on innovation and customer-centricity, we aim to be the trusted partner that businesses turn to for all their digital needs.`,
   },
   ar: {
     "button.contactus": "تواصل معنا",
@@ -37,7 +38,8 @@ export const ui = {
     "service.development": "تطوير",
     "contactus.title": "تواصل معنا",
     "aboutus.title": `من نحن`,
-    "aboutus.text": `Lorem ipsum dolor sit amet consectetur. Eget in diam non nunc consequat adipiscing. Gravida eleifend dictum rutrum dapibus ultrices vitae in pellentesque leo. Dolor mi mattis semper est congue ornare risus elit quis. Pretium vel molestie purus lorem tellus malesuada amet. Faucibus gravida sagittis proin imperdiet ultricies enim amet fames at. Nisi justo aliquet sed varius nisl consequat pharetra vulputate. Accumsan cras vel faucibus tincidunt gravida risus dignissim faucibus velit. Volutpat ac eget hendrerit vitae. Venenatis eu ut ac faucibus id non elementum. Egestas massa orci scelerisque scelerisque tellus augue.
-    Faucibus tortor eleifend montes venenatis quisque facilisis. Dictum gravida sed id laoreet id pulvinar nibh. Nunc commodo porttitor ut morbi ac at velit velit.`,
+    "aboutus.text": ` هي شركة حلول رقمية ذات تفكير تقدمي مكرسة لدفع الشركات نحو المستقبل. يجمع فريق الخبراء  لدينا بين  التكنولوجيا المتطورة والرؤية الإستراتيجية لتحقيق نتائج استثنائية. ومع التركيز على الجودة والأمان والابتكار، فإننا نعيد تعريف ما هو ممكن في المجال الرقمي.`,
+    "aboutus.goals.title": "مهمتنا",
+    "aboutus.goals.text": `تتمثل مهمتنا في إحداث ثورة في المشهد الرقمي من خلال توفير الحلول المتطورة التي تدفع نجاح الأعمال. نحن ملتزمون بتقديم قيمة استثنائية لعملائنا من خلال مزيج من الخبرة والإبداع والالتزام الثابت بالجودة. ومن خلال التركيز على الابتكار والتركيز على العملاء، نهدف إلى أن نكون الشريك الموثوق الذي تلجأ إليه الشركات لتلبية جميع احتياجاتها الرقمية.`,
   },
 } as const;

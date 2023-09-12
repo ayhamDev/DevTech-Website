@@ -41,7 +41,7 @@ const swiper = new Swiper(".swiper", {
     // when window width is >= 320px
     120: {
       slidesPerView: 1,
-      spaceBetween: 0,
+      spaceBetween: 40,
     },
     480: {
       slidesPerView: 1,
@@ -61,7 +61,6 @@ const swiper = new Swiper(".swiper", {
     },
   },
 });
-
 window.addEventListener("hashchange", () => handleHashChange(true));
 window.addEventListener("resize", () => handleHashChange(false));
 handleHashChange(true);

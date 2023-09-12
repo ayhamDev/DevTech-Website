@@ -8,14 +8,13 @@ const lang = getLangFromUrl(Astro.url);
 ---
 
 <form
-  action="sendmail.php"
-  method="POST"
   class={`contactus_form flex-1 w-full px-5 py-6 flex flex-col gap-4 bg-white shadow-main rounded-main`}
 >
   <Input
     placeholder={lang == "en" ? "*Full Name" : "*ألاسم"}
     name="name"
     type="text"
+    value={"ayham"}
     required
   />
   <Input
@@ -23,24 +22,28 @@ const lang = getLangFromUrl(Astro.url);
       ? "Company Name (Optional)"
       : "أسم الشركة (اختياري)"}
     name="company"
+    value={"ayhams company inc."}
     type="text"
   />
   <Input
-    placeholder={lang == "en" ? "Email" : "*البريد الالكتروني"}
+    placeholder={lang == "en" ? "*Email" : "*البريد الالكتروني"}
     type="email"
     name="email"
+    value={"ayhamgm81@gmail.com"}
     required
   />
   <Input
     placeholder={lang == "en" ? "*Phone Number" : "*رقم الهاتف"}
     type="tel"
     name="phone"
+    value={"+20 100 157 7302"}
     required
   />
   <Input
     placeholder={lang == "en" ? "*Subject..." : "*عنوان الموضوع"}
     type="text"
     name="subject"
+    value={"Develepment Project"}
     required
   />
   <TextArea
@@ -51,3 +54,11 @@ const lang = getLangFromUrl(Astro.url);
     {lang == "en" ? "Send" : "ارسال"}
   </Button>
 </form>
+
+<script>
+  const form = document.querySelector(".contactus_form") as HTMLFormElement;
+  const handleSubmit = (e: FormDataEvent) => {
+    e.preventDefault();
+  };
+  form.addEventListener("submit", handleSubmit);
+</script>

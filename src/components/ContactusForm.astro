@@ -15,7 +15,6 @@ const t = useTranslations(lang);
     placeholder={lang == "en" ? "*Full Name" : "*ألاسم"}
     name="name"
     type="text"
-    value={"ayham"}
     required
   />
   <Input
@@ -23,28 +22,24 @@ const t = useTranslations(lang);
       ? "Company Name (Optional)"
       : "أسم الشركة (اختياري)"}
     name="company"
-    value={"ayhams company inc."}
     type="text"
   />
   <Input
     placeholder={lang == "en" ? "*Email" : "*البريد الالكتروني"}
     type="email"
     name="email"
-    value={"ayhamgm81@gmail.com"}
     required
   />
   <Input
     placeholder={lang == "en" ? "*Phone Number" : "*رقم الهاتف"}
     type="tel"
     name="phone"
-    value={"+20 100 157 7302"}
     required
   />
   <Input
     placeholder={lang == "en" ? "*Subject..." : "*عنوان الموضوع"}
     type="text"
     name="subject"
-    value={"Develepment Project"}
     required
   />
   <TextArea
@@ -145,7 +140,7 @@ const t = useTranslations(lang);
   function EmailSent() {
     Swal.fire({
       title: t("email.success.title"),
-      text: t("email.success.text"),
+      text: `${t("email.success.text")}`,
       icon: "success",
       confirmButtonText: lang == "en" ? "Okay" : "موافق",
     });

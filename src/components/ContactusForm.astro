@@ -81,7 +81,7 @@ const t = useTranslations(lang);
   const lang = getLangFromUrl(location);
   const t = useTranslations(lang);
   const API_URL =
-    ENV() == "dev" ? "http://localhost:4200" : "https://mailapi.devtechsl.com/";
+    ENV() == "dev" ? "http://localhost:4200" : "https://mailapi.devtechsl.com";
   const form = document.querySelector(".contactus_form") as HTMLFormElement;
   const email_btn = document.querySelector(".email_btn") as HTMLButtonElement;
   const email_loading = document.querySelector(

@@ -82,6 +82,7 @@ const t = useTranslations(lang);
   const t = useTranslations(lang);
   const API_URL =
     ENV() == "dev" ? "http://localhost:4200" : "https://mailapi.devtechsl.com";
+
   const form = document.querySelector(".contactus_form") as HTMLFormElement;
   const email_btn = document.querySelector(".email_btn") as HTMLButtonElement;
   const email_loading = document.querySelector(
@@ -112,7 +113,7 @@ const t = useTranslations(lang);
     email_btn.classList.add("hidden");
     email_loading.classList.remove("hidden");
 
-    fetch("", {
+    fetch(API_URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

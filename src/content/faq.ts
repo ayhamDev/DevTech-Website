@@ -7,7 +7,7 @@ export interface Ifaq {
 const faq: Ifaq[] | null = [
   {
     question: "What does DevTech specialize in?",
-    question_ar: "Lorem ipsum dolor sit amet?",
+    question_ar: " ما الذي تتخصص به شركتنا",
     answer: `DevTech specializes in offering a range of services including Consultation, Marketing, Design, and Development. We help clients solve complex challenges in the digital space, establish their digital presence, create marketing campaigns, design visual identities, and develop various digital solutions.`,
     answer_ar: `Lorem ipsum dolor sit amet consectetur. Lectus nec elit adipiscing mi id elementum tortor rhoncus cras. Nibh non arcu mattis ultrices hac commodo. Adipiscing vel odio donec libero eget enim luctus placerat velit. Sit commodo nunc eget convallis scelerisque sed eleme`,
   },

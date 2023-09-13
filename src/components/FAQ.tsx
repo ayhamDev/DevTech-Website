@@ -66,7 +66,9 @@ function FAQ() {
                   });
                   SetSelected(selected == index ? null : index);
                 }}
-                className="px-8 select-none cursor-pointer py-3 bg-gray-200 rounded-main rounded-primary flex justify-between items-center"
+                className={`px-8 select-none cursor-pointer py-3 bg-gray-200 rounded-main rounded-primary flex justify-between items-center gap-4 ${
+                  lang == "ar" && "flex-row-reverse"
+                }`}
               >
                 <p>{lang == "en" ? item.question : item.question_ar}</p>
                 <svg

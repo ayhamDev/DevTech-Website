@@ -23,6 +23,10 @@ export const ui = {
     "aboutus.text": `DevTech is a forward-thinking digital solutions company dedicated to propelling businesses into the future. Our team of experts combines cutting-edge technology with strategic vision to deliver exceptional results. With a focus on quality, security, and innovation, we redefine what's possible in the digital realm.`,
     "aboutus.goals.title": "Our Mission",
     "aboutus.goals.text": `DevTech is on a mission to revolutionize the digital landscape by providing cutting-edge solutions that drive business success. We are dedicated to delivering exceptional value to our clients through a blend of expertise, creativity, and unwavering commitment to quality. With a focus on innovation and customer-centricity, we aim to be the trusted partner that businesses turn to for all their digital needs.`,
+    "email.success.title": "Your Message Was Sent",
+    "email.success.text": `Thank You For Your Message, You Should Recive an Email from us Shortly.`,
+    "email.fail.title": "Your Message Wasn't Sent",
+    "email.fail.text": `Something Failed On Our End, Please Try Again Later.`,
   },
   ar: {
     "button.contactus": "تواصل معنا",
@@ -41,5 +45,9 @@ export const ui = {
     "aboutus.text": ` هي شركة حلول رقمية ذات تفكير تقدمي مكرسة لدفع الشركات نحو المستقبل. يجمع فريق الخبراء  لدينا بين  التكنولوجيا المتطورة والرؤية الإستراتيجية لتحقيق نتائج استثنائية. ومع التركيز على الجودة والأمان والابتكار، فإننا نعيد تعريف ما هو ممكن في المجال الرقمي.`,
     "aboutus.goals.title": "مهمتنا",
     "aboutus.goals.text": `تتمثل مهمتنا في إحداث ثورة في المشهد الرقمي من خلال توفير الحلول المتطورة التي تدفع نجاح الأعمال. نحن ملتزمون بتقديم قيمة استثنائية لعملائنا من خلال مزيج من الخبرة والإبداع والالتزام الثابت بالجودة. ومن خلال التركيز على الابتكار والتركيز على العملاء، نهدف إلى أن نكون الشريك الموثوق الذي تلجأ إليه الشركات لتلبية جميع احتياجاتها الرقمية.`,
+    "email.success.title": "تم الارسال بنجاح",
+    "email.success.text": `شكرًا لك على رسالتك، ستتلقى بريدًا إلكترونيًا منا قريبًا.`,
+    "email.fail.title": "لم يتم الارسال",
+    "email.fail.text": `لقد فشل شيء ما من جانبنا، يرجى المحاولة مرة أخرى لاحقًا.`,
   },
 } as const;

@@ -8,5 +8,6 @@ import react from "@astrojs/react";
 export default defineConfig({
   cacheDir: "./.cache",
   site: "https://devtechsl.com",
+
   integrations: [sitemap(), tailwind(), react()],
 });

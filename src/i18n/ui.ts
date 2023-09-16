@@ -8,7 +8,7 @@ export const defaultLang = "en";
 export const ui = {
   en: {
     "button.contactus": "Contact Us",
-    "nav.home": "home",
+    "nav.home": "Home",
     "nav.services": "services",
     "nav.aboutus": "about us",
     "hero.title": "where innovation begins",

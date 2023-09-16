@@ -9,11 +9,7 @@ const lang = getLangFromUrl(Astro.url);
 <!doctype html>
 <html lang={lang}>
   <head>
-    <BaseHead
-      title={SITE_TITLE}
-      description={SITE_DESCRIPTION}
-      image="/images/LogoBig.png"
-    />
+    <BaseHead title={SITE_TITLE} image="/images/LogoBig.png" />
   </head>
   <slot />
 </html>
